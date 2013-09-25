@@ -1,0 +1,49 @@
+/**
+ * Vars
+ */
+@fg: #404040;
+@bg: #ECECEC;
+
+/**
+ * General
+ */
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background: @bg;
+  color: @fg;
+}
+
+img {
+  max-width: 100%;
+}
+
+.site-logo {
+  display: inline-block;
+}
+
+/**
+ * Layout
+ */
+header,
+footer,
+.main {
+  .inner {
+    padding: 10px;
+  }
+}
+
+.main {
+  background: white;
+}
+
+input[type="checkbox"] {
+  font-size: 2em;
+  &:checked + label {
+    color: red;
+    font-family: 'comic sans ms';
+  }
+}
