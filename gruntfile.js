@@ -20,6 +20,20 @@ module.exports = function(grunt) {
       }
     },
 
+    html2js: {
+      dist: {
+        options: {
+          module: null, // no bundle module for all the html2js templates
+          base: '.'
+        },
+        files: [{
+          expand: true,
+          src: ['src/views/**/*.html'],
+          ext: '.html.js'
+        }]
+      }
+    },
+
     jshint: {
       all: ['app/assets/js/main.js'],
       options: {
@@ -73,7 +87,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-regarde');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-html2js');
 
   // Define your tasks here
-  grunt.registerTask('default', ['concat', 'coffee', 'jshint', 'uglify', 'less', 'copy']);
+  grunt.registerTask('default', ['less', 'coffee', 'html2js', 'jshint', 'concat', 'uglify', 'copy']);
 };
