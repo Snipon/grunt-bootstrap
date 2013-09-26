@@ -86,5 +86,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Define your tasks here
-  grunt.registerTask('default', ['concat', 'coffee', 'jshint', 'uglify', 'less', 'ngtemplates']);
+  grunt.registerTask('default', ['concat', 'coffee', 'jshint', 'uglify', 'less', 'copy', 'ngtemplates']);
 };
