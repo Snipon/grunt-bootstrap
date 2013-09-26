@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="container">
+          <div class="inner row">
+            <div class="content col-lg-12">
+              <span class="label label-info">Branding</span>
+              <h1 class="site-title">
+                <figure class="site-logo"><img src="assets/img/logo.svg" height="100" /></figure>
+                Sandbox
+              </h1>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="view">
+        <div class="container">
+          <div class="inner row">
+              <span class="label label-info">View</span>
+              <ul>
+                <li ng-repeat="person in people">
+                  {{ person.name }} from {{ person.city }}, {{ person.state }}
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="container">
+          <div class="inner row ">
+            <div class="content col-lg-12">
+              <span class="label label-info">Closure</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

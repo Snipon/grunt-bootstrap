@@ -1,8 +1,0 @@
-{exec} = require 'child_process'
-task 'hello', 'Description of task', ->
-  console.log 'Hello World!'
-
-task 'sbuild', 'Build project from src/*.coffee to js/*.js', ->
-  exec 'coffee --compile --output js/ src/', (err, stdout, stderr) ->
-    throw err if err
-    console.log stdout + stderr
