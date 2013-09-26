@@ -45,8 +45,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'app/assets/js/vendor.js': [
-            'vendor/jquery/jquery.js',
-            //'vendor/bootstrap/js/*.js',
+            // 'vendor/jquery/jquery.js',
+            // 'vendor/bootstrap/js/*.js',
             'vendor/angular/angular.js'
           ],
           'app/assets/css/vendor.min.css': 'app/vendor/**/*.css',
