@@ -49,17 +49,8 @@ module.exports = function(grunt) {
             // 'vendor/bootstrap/js/*.js',
             'vendor/angular/angular.js'
           ],
-          'app/assets/css/vendor.min.css': 'app/vendor/**/*.css',
           'app/assets/css/main.min.css': 'app/assets/css/*.css'
         }
-      }
-    },
-
-    ngtemplates:  {
-      Weblight: {
-        options:  { base: 'src/views' },
-        src:      [ 'src/views/**.html' ],
-        dest:     'app/assets/js/templates.js'
       }
     },
 
@@ -79,12 +70,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-angular-templates');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-regarde');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Define your tasks here
-  grunt.registerTask('default', ['concat', 'coffee', 'jshint', 'uglify', 'less', 'copy', 'ngtemplates']);
+  grunt.registerTask('default', ['concat', 'coffee', 'jshint', 'uglify', 'less', 'copy']);
 };
