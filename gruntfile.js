@@ -24,7 +24,10 @@ module.exports = function(grunt) {
       main: {
         options: {
           sassDir: 'src/sass',
-          cssDir: 'app/assets/css'
+          cssDir: 'app/assets/css',
+          outputStyle: 'compressed',
+          noLineComments: true,
+          raw: 'preferred_syntax = :scss\n' // Use `raw` since it's not directly available
         }
       }
     },
