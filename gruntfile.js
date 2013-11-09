@@ -7,30 +7,22 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'app/assets/js/main.js': ['src/**/*.coffee']
+          'app/assets/js/main.js': ['src/cs/main.coffee']
         }
       }
     },
 
     less: {
-      develop: {
+      vendor: {
         files: {
-          "app/assets/css/main.css": "src/less/main.less"
+          'app/assets/css/vendor.css': 'vendor/bootstrap/less/bootstrap.less'
         }
-      }
-    },
+      },
 
-    html2js: {
-      dist: {
-        options: {
-          module: null, // no bundle module for all the html2js templates
-          base: '.'
-        },
-        files: [{
-          expand: true,
-          src: ['src/views/**/*.html'],
-          ext: '.html.js'
-        }]
+      main: {
+        files: {
+          'app/assets/css/main.css': 'src/less/main.less'
+        }
       }
     },
 
@@ -47,24 +39,28 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      dist: {
+      vendor: {
         files: {
-          'app/assets/js/main.min.js': ['app/assets/js/main.js'],
           'app/assets/js/vendor.min.js': ['app/assets/js/vendor.js']
+        }
+      },
+
+      main: {
+        files: {
+          'app/assets/js/main.min.js': ['app/assets/js/main.js']
         }
       }
     },
 
     concat: {
-      dist: {
-        files: {
-          'app/assets/js/vendor.js': [
-            // 'vendor/jquery/jquery.js',
-            // 'vendor/bootstrap/js/*.js',
-            'vendor/angular/angular.js'
-          ],
-          'app/assets/css/main.min.css': 'app/assets/css/*.css'
-        }
+      scripts: {
+        'src': [
+          'vendor/jquery/jquery.js',
+          'vendor/underscore/underscore.js'
+          // 'vendor/bootstrap/js/*.js',
+          //'vendor/angular/angular.js'x
+        ],
+        'dest': 'app/assets/js/vendor.js'
       }
     },
 
@@ -74,6 +70,30 @@ module.exports = function(grunt) {
           {expand: true, cwd: 'src/', src: ['index.html'], dest: 'app/', filter: 'isFile'},
           {expand: true, cwd: 'src/img/', src: ['**'], dest: 'app/assets/img/', filter: 'isFile'},
         ]
+      }
+    },
+
+    watch: {
+      options: {
+        dateFormat: function(time) {
+          grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
+          grunt.log.writeln('Waiting for more changes...');
+        },
+      },
+
+      scripts: {
+        files: 'src/cs/*.coffee',
+        tasks: ['coffee', 'jshint', 'uglify:main'],
+      },
+
+      css: {
+        files: 'src/less/*.less',
+        tasks: ['less:main']
+      },
+
+      html: {
+        files: ['src/*html', 'src/img/*'],
+        tasks: ['copy']
       }
     }
   });
@@ -85,10 +105,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-regarde');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-html2js');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Define your tasks here
-  grunt.registerTask('default', ['less', 'coffee', 'html2js', 'jshint', 'concat', 'uglify', 'copy']);
+  grunt.registerTask(
+    'default', ['less', 'coffee', 'html2js', 'jshint', 'concat', 'uglify', 'copy', 'watch']
+  );
 };
