@@ -17,11 +17,14 @@ module.exports = function(grunt) {
         files: {
           'app/assets/css/vendor.css': 'vendor/bootstrap/less/bootstrap.less'
         }
-      },
+      }
+    },
 
+    compass: {
       main: {
-        files: {
-          'app/assets/css/main.css': 'src/less/main.less'
+        options: {
+          sassDir: 'src/sass',
+          cssDir: 'app/assets/css'
         }
       }
     },
@@ -87,8 +90,8 @@ module.exports = function(grunt) {
       },
 
       css: {
-        files: 'src/less/*.less',
-        tasks: ['less:main']
+        files: 'src/sass/*.scss',
+        tasks: ['compass']
       },
 
       html: {
@@ -99,16 +102,17 @@ module.exports = function(grunt) {
   });
 
   // Load plugins here
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Define your tasks here
   grunt.registerTask(
-    'default', ['less', 'coffee', 'jshint', 'concat', 'uglify', 'copy', 'watch']
+    'default', ['less', 'compass', 'coffee', 'jshint', 'concat', 'uglify', 'copy', 'watch']
   );
 };

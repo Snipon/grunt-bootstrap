@@ -1,9 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Quicksand:300);
+
 /**
  * Vars
  */
-@fg: rgb(70,70,70);
-@bg: rgb(255,255,255);
+$fg: rgb(70,70,70);
+$bg: rgb(255,255,255);
 
 /**
  * General
@@ -14,8 +15,8 @@ body {
 }
 
 body {
-  background: @bg;
-  color: @fg;
+  background: $bg;
+  color: $fg;
 }
 
 img {
@@ -38,7 +39,7 @@ body, h1, h2, h3, h4, h5, h6 {
  * Layout
  */
 .contentarea {
-  border: 1px dashed @fg;
+  border: 1px dashed $fg;
   border-width: 1px 0;
 }
 
