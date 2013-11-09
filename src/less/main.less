@@ -1,9 +1,8 @@
-@import "vendor/bootstrap/less/bootstrap.less";
 /**
  * Vars
  */
-@fg: #404040;
-@bg: #ECECEC;
+@fg: rgb(70,70,70);
+@bg: rgb(255,255,255);
 
 /**
  * General
@@ -29,7 +28,13 @@ img {
 /**
  * Layout
  */
-.view {
-  background: white;
+.contentarea {
+  border: 1px dashed @fg;
+  border-width: 1px 0;
 }
 
+.branding,
+.contentarea,
+.closure {
+  padding: 10px;
+}
