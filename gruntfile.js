@@ -109,6 +109,6 @@ module.exports = function(grunt) {
 
   // Define your tasks here
   grunt.registerTask(
-    'default', ['less', 'coffee', 'html2js', 'jshint', 'concat', 'uglify', 'copy', 'watch']
+    'default', ['less', 'coffee', 'jshint', 'concat', 'uglify', 'copy', 'watch']
   );
 };
