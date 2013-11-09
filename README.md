@@ -42,4 +42,4 @@ And finally
 
     grunt
 
-Changes are made in src directory, grunt will watch, move and compile your files like a boss.
+Changes are made in the 'src' directory. Grunt will watch, move and compile your files like a boss.
