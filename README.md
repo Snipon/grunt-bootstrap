@@ -2,7 +2,6 @@
 
 Just some playing around with them modern internet stuffs.
 
-
 ##Preparation
 
 Ruby needs to be installed. It comes with xcode for OSX. If you're a Linux user, you can probably figure it out.
@@ -21,12 +20,6 @@ Then [bower](http://bower.io/)
 And also [grunt](http://gruntjs.com/)
 
     npm install -g grunt-cli
-
-
-
-
-
-
 
 ##Install
 
