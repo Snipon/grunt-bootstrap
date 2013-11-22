@@ -85,6 +85,7 @@ module.exports = function(grunt) {
           grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
           grunt.log.writeln('Waiting for more changes...');
         },
+        livereload: true
       },
 
       scripts: {
