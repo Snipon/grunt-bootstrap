@@ -73,7 +73,7 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, cwd: 'src/', src: ['index.html'], dest: 'app/', filter: 'isFile'},
+          {expand: true, cwd: 'src/', src: ['*.php'], dest: 'app/', filter: 'isFile'},
           {expand: true, cwd: 'src/img/', src: ['**'], dest: 'app/assets/img/', filter: 'isFile'},
         ]
       }
@@ -98,8 +98,8 @@ module.exports = function(grunt) {
         tasks: ['compass']
       },
 
-      html: {
-        files: ['src/*html', 'src/img/*'],
+      php: {
+        files: ['src/*.php', 'src/img/*'],
         tasks: ['copy']
       }
     }
