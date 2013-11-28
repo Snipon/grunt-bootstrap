@@ -84,16 +84,15 @@ module.exports = function(grunt) {
         dateFormat: function(time) {
           grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
           grunt.log.writeln('Waiting for more changes...');
-        },
-        livereload: true
+        }
       },
 
-      scripts: {
+      coffee: {
         files: 'src/cs/*.coffee',
-        tasks: ['coffee', 'jshint', 'uglify:main'],
+        tasks: ['coffee', 'jshint', 'uglify:main']
       },
 
-      css: {
+      sass: {
         files: 'src/sass/*.scss',
         tasks: ['compass']
       },
@@ -101,6 +100,14 @@ module.exports = function(grunt) {
       php: {
         files: ['src/*.php', 'src/img/*'],
         tasks: ['copy']
+      },
+
+      reload: {
+        options: {
+          base: 'app',
+          livereload: true
+        },
+        files: ['app/**/*.css', 'app/**/*.js', 'app/**/*.php']
       }
     }
   });
