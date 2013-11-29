@@ -102,12 +102,20 @@ module.exports = function(grunt) {
         tasks: ['copy']
       },
 
-      reload: {
+      css: {
         options: {
           base: 'app',
           livereload: true
         },
-        files: ['app/**/*.css', 'app/**/*.js', 'app/**/*.php']
+        files: ['app/**/*.css']
+      },
+
+      resources: {
+        options: {
+          base: 'app',
+          livereload: true
+        },
+        files: ['app/img/*', 'app/**/*.js', 'app/**/*.php']
       }
     }
   });

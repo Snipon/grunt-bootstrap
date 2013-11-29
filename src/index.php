@@ -28,9 +28,6 @@
           <div class="inner row">
             <div class="content col-lg-12">
               <span class="label label-info">Contentarea</span>
-                <form>
-                  <input type="text" />
-                </form>
               </form>
             </div>
           </div>
