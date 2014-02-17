@@ -13,9 +13,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "2.0.3",
-    "angular": "1.2.1",
-    "underscore": "1.5.2",
-    "bootstrap": "3.0.2"
+    "jquery": "latest",
+    "angular": "latest",
+    "underscore": "latest",
+    "bootstrap": "latest"
   }
 }
