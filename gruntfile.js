@@ -61,10 +61,10 @@ module.exports = function(grunt) {
     concat: {
       scripts: {
         'src': [
-          'vendor/jquery/jquery.js',
-          'vendor/underscore/underscore.js'
-          // 'vendor/bootstrap/js/*.js',
-          //'vendor/angular/angular.js'x
+          'vendor/jquery/dist/jquery.js',
+          'vendor/underscore/underscore.js',
+          //'vendor/bootstrap/js/*.js',
+          'vendor/angular/angular.js'
         ],
         'dest': 'app/assets/js/vendor.js'
       }
