@@ -89,7 +89,7 @@ module.exports = function(grunt) {
 
       coffee: {
         files: 'src/cs/*.coffee',
-        tasks: ['coffee', 'jshint', 'uglify:main']
+        tasks: ['coffee', 'uglify:main']
       },
 
       sass: {
@@ -125,13 +125,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
+  //grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Define your tasks here
   grunt.registerTask(
-    'default', ['less', 'compass', 'coffee', 'jshint', 'concat', 'uglify', 'copy', 'watch']
+    'default', ['less', 'compass', 'coffee', 'concat', 'uglify', 'copy', 'watch']
   );
 };
